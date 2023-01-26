@@ -8,8 +8,18 @@ interface _LayoutProps {
 const Layout = ({ children }: _LayoutProps): JSX.Element => {
 	return (
 		<Flex h={'100vh'} w={'100vw'} flexDir={'column'}>
-			<Navbar /> {/* This navbar is 80px tall */}
-			{children}
+			<Navbar />
+			{/* The navbar is 80px tall */}
+			<Flex
+				// bg='red.200'
+				maxWidth={'container.lg'}
+				m={'auto'}
+				p={8}
+				flexDir={'column'}
+				h={'calc(100vh - 80px)'}
+			>
+				{children}
+			</Flex>
 		</Flex>
 	)
 }
